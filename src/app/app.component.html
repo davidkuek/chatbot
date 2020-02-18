@@ -1,0 +1,39 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+<html>
+<head>
+</head>
+<body>
+<div class="container">
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="mesgs">
+          <div class="msg_history" *ngFor='let dialog of dialogList'>
+            <div class="incoming_msg" *ngIf="dialog.type == 'bot'">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>{{dialog.content}}</p>
+                  <span class="time_date">{{dialog.time}}</span></div>
+              </div>
+            </div>
+            <div class="outgoing_msg" *ngIf="dialog.type == 'user'">
+              <div class="sent_msg">
+                <p>{{dialog.content}}/p>
+                <span class="time_date">{{dialog.time}}</span> </div>
+            </div>
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input type="text" class="write_msg" placeholder="Ask me a question" [(ngModel)]="userTypeMsg" />
+              <button class="msg_send_btn" type="button" (click)='sendMsg()'><i class="fa fa-paper-plane-o" aria-hidden="true" ></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div></div>
+    </body>
+    </html>
